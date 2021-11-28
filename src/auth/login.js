@@ -4,6 +4,8 @@
 function welcomLoginUser() {
   loginDiv.classList.add("hidden");
   logoutDiv.classList.remove("hidden");
+
+  const userName = localStorage.getItem("userName");
   welcomeUserMessage.innerHTML = `Hello! ${userName}`;
 }
 
