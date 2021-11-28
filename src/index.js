@@ -9,6 +9,7 @@ const logoutButton = document.querySelector("#logoutButton");
 const welcomeUserMessage = document.querySelector("#welcomeUserMessage");
 //
 const todosDiv = document.querySelector("#todosDiv");
+const todosForm = document.querySelector("#todosForm");
 const todoUl = document.querySelector("#todoUl");
 
 const TODO_LIST = "todoList";
