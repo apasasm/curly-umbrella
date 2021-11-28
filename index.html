@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vanilla Challenge</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+      <div id="loginDiv" class="hidden">
+        <div>
+            <span><h2 id="welcomeGuestMessage">Hello! Guest!! </h2></span>
+        </div>
+        <div>
+            <span><form id="loginForm"> 
+                <input id="loginInput" required placeholder="What Your Name?"></input>
+                <button id="loginButton">Login</button>
+            </form></span>
+        </div>
+    </div>
+    <div id="logoutDiv" class="hidden">
+        <div>
+            <h2 id="welcomeUserMessage"></h2>
+        </div>
+        <button id="logoutButton">Logout</button>
+    </div>
+    <div>
+        <h2 class="js-clock"></h2>
+    </div>
+    <div>
+        <button id="change-color">Give me color</button>
+    </div>
+</body>
+
+<!-- 개선 : Element 생성/삭제로 변경 필요 -->
+<script src="src/auth/login.js"></script>
+<script src="src/auth/logout.js"></script>
+<script src="src/auth/authcheck.js"></script>
+
+<!-- 개선 : Image 로 변경 -->
+<script src="src/background.js"></script>
+<script src="src/clock.js"></script>
+
+<!-- 생성 필요 -->
+<script src="src/todo.js"></script>
+
+<!-- 생성 필요 -->
+<script src="src/weather.js"></script>
+</html>
