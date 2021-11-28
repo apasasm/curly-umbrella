@@ -4,6 +4,7 @@
 function welcomLoginUser(userName) {
   loginDiv.classList.add("hidden");
   logoutDiv.classList.remove("hidden");
+  todosDiv.classList.remove("hidden");
 
   welcomeUserMessage.innerHTML = `Hello! ${userName}`;
 }
