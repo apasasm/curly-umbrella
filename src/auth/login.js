@@ -9,7 +9,7 @@ function welcomLoginUser(userName) {
   welcomeUserMessage.innerHTML = `Hello! ${userName}`;
 }
 
-function loginAction(event) {
+function getLogin(event) {
   event.preventDefault();
 
   const userName = loginInput.value;

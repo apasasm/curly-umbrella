@@ -28,7 +28,8 @@ function printTodoList(todoList) {
 function loadTodoList() {
   let savedTodoList = localStorage.getItem(TODO_LIST);
   if (savedTodoList) {
-    savedTodoList = JSON.parse(savedTodoList);
+    const parsedTodoList = JSON.parse(savedTodoList);
+    return parsedTodoList;
   } else {
     savedTodoList = [];
   }
