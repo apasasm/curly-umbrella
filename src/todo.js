@@ -1,44 +1,31 @@
-// function todoDelete(event) {
-//     event.preventDefault();
-//     console.log("todoDelete");
-// }
-
-// function createTodoElement(todo) {
-//     console.log("createTodoElement");
-//     const li = document.createElement("li");
-//     li.innerText = todo
-// }
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
-  todoList = todoList.filter((todo) => todo.id !== parseInt(li.id));
+  todoList = todoList.filter((targetTodo) => targetTodo.id !== parseInt(li.id));
   localStorage.setItem(TODO_LIST, todoList);
 }
 
-function createTodoElement(todo) {
+function createTodoElement(todoItem) {
   const li = document.createElement("li");
-  li.id = todo.id;
+  li.id = todoItem.id;
 
   const span = document.createElement("span");
-  span.innerText = todo.text;
+  span.innerText = todoItem.value;
 
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "❌";
+  deleteButton.addEventListener("click", deleteToDo);
 
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(deleteButton);
   todoUl.appendChild(li);
 }
 
 function printTodoList(todoList) {
-  console.log("printTodos");
-  todoList = loadTodoList();
-  todoList.forEach((element) => createTodoElement(element));
+  todoList.forEach((todoItem) => createTodoElement(todoItem));
 }
 
 function loadTodoList() {
-  console.log("loadTodoList");
   let savedTodoList = localStorage.getItem(TODO_LIST);
   if (savedTodoList) {
     savedTodoList = JSON.parse(savedTodoList);
@@ -48,33 +35,33 @@ function loadTodoList() {
   return savedTodoList;
 }
 
-function updateTodoList(todo) {
-  todoList = loadTodoList();
-  console.log("updateTodoList : ", todoList);
-  console.log(typeof todoList);
-
-  todoList.push(todo);
-  console.log("todoList : ", todoList);
+function updateTodoList(newTodo) {
+  //   todoList = loadTodoList();
+  todoList.push(newTodo);
 
   const newTodoList = JSON.stringify(todoList);
   localStorage.setItem(TODO_LIST, newTodoList);
-  printTodoList();
+  printTodoList(newTodoList);
 }
 
 function createTodoItem(event) {
   event.preventDefault();
   const todoValue = todosInput.value;
   const todoDate = new Date().getTime();
-  const todo = {
+  const newTodo = {
     id: todoDate,
     username: userName,
     value: todoValue,
   };
 
   todosInput.value = "";
-  return updateTodoList(todo);
+  updateTodoList(newTodo);
+  return;
 }
 
-let todoList = [];
-printTodoList();
+let todoList = loadTodoList();
+if (todoList !== []) {
+  printTodoList(todoList);
+}
+// printTodoList();
 todosDiv.addEventListener("submit", createTodoItem);

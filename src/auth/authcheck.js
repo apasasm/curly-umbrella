@@ -3,10 +3,10 @@
 */
 
 if (userName) {
-  welcomLoginUser();
+  welcomLoginUser(userName);
 } else {
   welcomGuestUser();
 }
 
-loginForm.addEventListener("submit", loginAction);
-logoutButton.addEventListener("click", logoutAction);
+loginForm.addEventListener("submit", getLogin);
+logoutButton.addEventListener("click", getLogout);

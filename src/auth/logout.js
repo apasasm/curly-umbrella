@@ -6,7 +6,7 @@ function welcomGuestUser() {
   logoutDiv.classList.add("hidden");
 }
 
-function logoutAction() {
+function getLogout() {
   localStorage.removeItem("userName");
   welcomGuestUser();
 }
