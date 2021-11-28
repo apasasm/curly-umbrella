@@ -1,11 +1,10 @@
 /* 
     Login 처리 전반 
 */
-function welcomLoginUser() {
+function welcomLoginUser(userName) {
   loginDiv.classList.add("hidden");
   logoutDiv.classList.remove("hidden");
 
-  const userName = localStorage.getItem("userName");
   welcomeUserMessage.innerHTML = `Hello! ${userName}`;
 }
 
@@ -15,5 +14,5 @@ function loginAction(event) {
   const userName = loginInput.value;
   loginInput.value = "";
   localStorage.setItem("userName", userName);
-  welcomLoginUser();
+  welcomLoginUser(userName);
 }
