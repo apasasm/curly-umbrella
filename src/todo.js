@@ -5,7 +5,7 @@ function deleteToDo(event) {
   localStorage.setItem(TODO_LIST, todoList);
 }
 
-function createTodoElement(todoItem) {
+function printTodoItem(todoItem) {
   const li = document.createElement("li");
   li.id = todoItem.id;
 
@@ -22,7 +22,7 @@ function createTodoElement(todoItem) {
 }
 
 function printTodoList(todoList) {
-  todoList.forEach((todoItem) => createTodoElement(todoItem));
+  todoList.forEach((todoItem) => printTodoItem(todoItem));
 }
 
 function loadTodoList() {
@@ -37,12 +37,12 @@ function loadTodoList() {
 }
 
 function updateTodoList(newTodo) {
-  //   todoList = loadTodoList();
   todoList.push(newTodo);
 
   const newTodoList = JSON.stringify(todoList);
   localStorage.setItem(TODO_LIST, newTodoList);
-  printTodoList(newTodoList);
+
+  return printTodoItem(newTodo);
 }
 
 function createTodoItem(event) {
@@ -56,13 +56,12 @@ function createTodoItem(event) {
   };
 
   todosInput.value = "";
-  updateTodoList(newTodo);
-  return;
+
+  return updateTodoList(newTodo);
 }
 
 let todoList = loadTodoList();
 if (todoList !== []) {
   printTodoList(todoList);
 }
-// printTodoList();
-todosDiv.addEventListener("submit", createTodoItem);
+todosForm.addEventListener("submit", createTodoItem);
