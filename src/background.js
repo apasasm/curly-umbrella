@@ -18,7 +18,9 @@ function getRandomIndex(object) {
 function changeBackgroundImg() {
   const selectedImg = baclgroundImg[getRandomIndex(baclgroundImg)];
   // htmlBody.style.backgroundImage = `../img/${selectedImg}`;
-  document.body.style.backgroundImage = `url('../img/${selectedImg}')`;
+
+  // document.body.style.backgroundImage = `url('../img/${selectedImg}')`;
+  document.body.style.backgroundImage = `url(https://github.com/apasasm/curly-umbrella.github.io/raw/main/img/${selectedImg})`;
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundSize = "cover";
 }
