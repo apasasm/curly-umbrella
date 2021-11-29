@@ -2,7 +2,7 @@ function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
   todoList = todoList.filter((targetTodo) => targetTodo.id !== parseInt(li.id));
-  localStorage.setItem(TODO_LIST, todoList);
+  localStorage.setItem(TODO_LIST, JSON.stringify(todoList));
 }
 
 function printTodoItem(todoItem) {
@@ -61,6 +61,7 @@ function createTodoItem(event) {
   return updateTodoList(newTodo);
 }
 
+const TODO_LIST = "todoList";
 let todoList = loadTodoList();
 if (todoList !== []) {
   printTodoList(todoList);
