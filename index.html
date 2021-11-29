@@ -7,8 +7,14 @@
   </head>
   <body>
       <div>
-          <h2 class="js-clock"></h2>
-      </div>
+          <div>
+              <h2 class="js-clock"></h2>
+          </div>
+          <div id="weatherDiv">
+              <span id="weatherCity"></span>
+              <span id="weatherName"></span>
+            </div>
+        </div>
       <div id="loginDiv" class="hidden center">
         <div>
             <span><h2 id="welcomeGuestMessage">Hello! Guest!! </h2></span>
@@ -20,34 +26,33 @@
             </form></span>
         </div>
     </div>
-    <div id="logoutDiv" class="hidden center">
-        <div>
-            <h2 id="welcomeUserMessage"></h2>
+    <div>
+
+        <div id="logoutDiv" class="hidden center">
+            <div>
+                <h2 id="welcomeUserMessage"></h2>
+            </div>
+            <button id="logoutButton">Logout</button>
         </div>
-        <button id="logoutButton">Logout</button>
-    </div>
-    <div id="todosDiv" class="hidden center">
-        <div>
-            <span><form id="todosForm"> 
-                <input id="todosInput" required placeholder="Enter your to-dos here!"></input>
-                <button id="todosButton">Enter</button>
-            </form></span>
-        </div>
-        <div>
-            <ul id="todoUl" class="big-font"></ul>
+        <div id="todosDiv" class="hidden center">
+            <div>
+                <span><form id="todosForm"> 
+                    <input id="todosInput" required placeholder="Enter your to-dos here!"></input>
+                    <button id="todosButton">Enter</button>
+                </form></span>
+            </div>
+            <div>
+                <ul id="todoUl" class="big-font"></ul>
+            </div>
         </div>
     </div>
     <!-- <div>
         <button id="change-color">Give me color</button>
     </div> -->
-    <div id="weatherDiv">
-        <span id="weatherCity"></span>
-        <span id="weatherName"></span>
-    </div>
 </body>
 <script src="src/index.js"></script>
-<script src="src/auth/login.js"></script><!-- 개선 : Element 생성/삭제로 변경 필요 -->
-<script src="src/auth/logout.js"></script><!-- 개선 : Element 생성/삭제로 변경 필요 -->
+<script src="src/auth/login.js"></script>
+<script src="src/auth/logout.js"></script>
 <script src="src/auth/authcheck.js"></script>
 <script src="src/background.js"></script>
 <script src="src/clock.js"></script>

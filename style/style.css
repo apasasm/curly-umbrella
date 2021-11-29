@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   width: 100%;
-  /* display: flex; */
+  display: flex;
   color: #ffffff;
   justify-content: center;
   align-items: center;
@@ -9,30 +9,25 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* .center {
-  align-content: center;
-} */
-
 .center {
-  /* border: 5px solid #ffff00; */
   text-align: center;
+}
+
+.span-right {
+  width: 450px;
+  text-align: left;
+  display: inline-block;
+  background: rgba(175, 175, 175, 0.4);
 }
 
 ul {
-  /* text-align: center; */
-  /* border: 1px solid #ffff00; */
+  align-items: left;
   display: inline-block;
 }
 
-/* li {
-  border: 1px solid #ffff00;
-  text-align: center;
-  display: inline-block;
-} */
-
-/* button {
-  font-size: 20px;
-} */
+li {
+  width: 500px;
+}
 
 .very-big-font {
   font-size: 450px;
