@@ -7,9 +7,9 @@ function getRandomIndex(object) {
 
 function changeBackgroundImg() {
   const selectedImg = baclgroundImg[getRandomIndex(baclgroundImg)];
-  document.body.style.backgroundImage = `url("${selectedImg}")`;
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundSize = "cover";
+  htmlBody.style.backgroundImage = `url("${selectedImg}")`;
+  htmlBody.style.backgroundRepeat = "no-repeat";
+  htmlBody.style.backgroundSize = "cover";
 }
 
 const htmlBody = document.querySelector("body");
