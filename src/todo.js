@@ -9,15 +9,16 @@ function printTodoItem(todoItem) {
   const li = document.createElement("li");
   li.id = todoItem.id;
 
+  const sapnDeleteButton = document.createElement("span");
+  sapnDeleteButton.innerText = "❌";
+  sapnDeleteButton.addEventListener("click", deleteToDo);
+  li.appendChild(sapnDeleteButton);
+
   const span = document.createElement("span");
   span.innerText = todoItem.value;
-
-  const deleteButton = document.createElement("button");
-  deleteButton.innerText = "❌";
-  deleteButton.addEventListener("click", deleteToDo);
-
+  span.classList.add("span-right");
   li.appendChild(span);
-  li.appendChild(deleteButton);
+
   todoUl.appendChild(li);
 }
 
