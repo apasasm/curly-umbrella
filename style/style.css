@@ -19,19 +19,23 @@ body {
 }
 
 ul {
-  text-align: center;
+  /* text-align: center; */
+  /* border: 1px solid #ffff00; */
+  display: inline-block;
 }
 
 /* li {
+  border: 1px solid #ffff00;
+  text-align: center;
   display: inline-block;
+} */
+
+/* button {
+  font-size: 20px;
 } */
 
 .very-big-font {
   font-size: 450px;
-}
-
-button {
-  font-size: 20px;
 }
 
 .big-font {
